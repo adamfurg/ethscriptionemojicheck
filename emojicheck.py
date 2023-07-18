@@ -10,8 +10,8 @@ def check_sha_exists(sha):
 with open("E.akak.txt", "r") as file:
     emojis = [line.strip() for line in file]
 
-# Read the lines from the "hash good eth" file (SHA-256 hashes)
-with open("hash good eth", "r") as file:
+# Read the lines from the "hash good eth.txt" file (SHA-256 hashes)
+with open("hash good eth.txt", "r") as file:
     hashes = [line.strip() for line in file]
 
 # Create a dictionary where each emoji is a key that corresponds to its SHA-256 hash
