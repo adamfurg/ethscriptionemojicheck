@@ -9,7 +9,7 @@ def check_sha_exists(sha):
 
 # Function to convert emoji to hex
 def emoji_to_hex(emoji):
-    return ''.join([f'{ord(c):x}' for c in "data:," + emoji])
+    return ''.join([f'{ord(c):x}' for c in emoji])
 
 # Read the lines from the "E.akak.txt" file (emojis)
 with open("E.akak.txt", "r") as file:
