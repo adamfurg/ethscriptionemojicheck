@@ -7,10 +7,6 @@ def check_sha_exists(sha):
     data = response.json()
     return data
 
-# Function to convert emoji to hex
-def emoji_to_hex(emoji):
-    return ''.join([f'{ord(c):x}' for c in emoji])
-
 # Read the lines from the "E.akak.txt" file (emojis)
 with open("E.akak.txt", "r") as file:
     emojis = [line.strip() for line in file]
@@ -40,9 +36,6 @@ if emoji:  # Only run the rest of the code if the user has entered an emoji
         else:
             st.write("This emoji is not taken.")
             st.write("这个表情符号未被占用。")
-            hex_value = emoji_to_hex(emoji)
-            st.write(f"hex: {hex_value}")
-            st.write(f"十六进制：{hex_value}")
     else:
         st.write(f"No hash found for emoji: {emoji}")
         st.write(f"找不到表情符号的哈希值：{emoji}")
