@@ -21,7 +21,7 @@ emoji_to_hash = dict(zip(emojis, hashes))
 # Get the emoji from the user
 st.write("Please enter the emoji you want to check:")
 st.write("请输入你想要检查的表情符号：")
-emoji = st.text_input("")
+emoji = st.text_input("Emoji input", label_visibility=False)
 
 if emoji:  # Only run the rest of the code if the user has entered an emoji
     sha = emoji_to_hash.get(emoji)  # Returns None if the emoji is not in the dictionary
@@ -29,13 +29,13 @@ if emoji:  # Only run the rest of the code if the user has entered an emoji
     if sha is not None:
         response_data = check_sha_exists(sha)
         if response_data['result']:
-            st.write(f"Result: {response_data['result']}")
-            st.write(f"结果：{response_data['result']}")
+            st.write("This emoji is taken.")
+            st.write("这个表情符号已被占用。")
             st.write(f"Current owner: {response_data['ethscription']['current_owner']}")
             st.write(f"当前所有者：{response_data['ethscription']['current_owner']}")
         else:
-            st.write(f"Result: {response_data['result']}")
-            st.write(f"结果：{response_data['result']}")
+            st.write("This emoji is not taken.")
+            st.write("这个表情符号未被占用。")
     else:
         st.write(f"No hash found for emoji: {emoji}")
         st.write(f"找不到表情符号的哈希值：{emoji}")
