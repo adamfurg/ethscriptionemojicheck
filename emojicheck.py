@@ -21,7 +21,7 @@ emoji_to_hash = dict(zip(emojis, hashes))
 # Get the emoji from the user
 st.write("Please enter the emoji you want to check:")
 st.write("请输入你想要检查的表情符号：")
-emoji = st.text_input("Emoji input", label_visibility=False)
+emoji = st.text_input("")
 
 if emoji:  # Only run the rest of the code if the user has entered an emoji
     sha = emoji_to_hash.get(emoji)  # Returns None if the emoji is not in the dictionary
